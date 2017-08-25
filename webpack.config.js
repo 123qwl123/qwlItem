@@ -46,5 +46,11 @@ module.exports = {
     inline: true,//设置为true，当源文件改变时会自动刷新页面
     port: 8080,//设置默认监听端口，如果省略，默认为"8080"
 //  process: true,//显示合并代码进度webpack2.x没有
+    proxy: {
+             '/workspace/*': {
+                target: 'http://10.251.251.64:8080',
+                secure: false
+            }
+        }
 	}
 }
